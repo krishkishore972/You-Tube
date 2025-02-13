@@ -9,10 +9,10 @@ interface HomeLayoutProps {
 export const HomeLayout = ({ children }: HomeLayoutProps) => {
   return (
     <SidebarProvider>
-      <div className="w-full">
+      <div className="">
         <HomeNavbar />
       </div>
-      <div className=" flex min-h-screen pt-[4rem]">
+      <div className=" flex min-h-screen  pt-[4rem]">
         <HomeSidebar />
         <main className="flex-1  overflow-y-auto">
         {children}

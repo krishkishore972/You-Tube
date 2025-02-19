@@ -5,7 +5,6 @@ import { initTRPC, TRPCError } from "@trpc/server";
 import { eq } from "drizzle-orm";
 import { cache } from "react";
 import superjson from "superjson";
-
 import { rateLimit } from "@/lib/ratelimit";
 
 
@@ -44,9 +43,6 @@ export const protectedProcedure = t.procedure.use(async function isAuthed(
     .from(Users)
     .where(eq(Users.clerkId, ctx.clerkUserId))
     .limit(1);
-
-
-
     if(!user){
       throw new TRPCError({ code: "UNAUTHORIZED" });
     }
